@@ -308,7 +308,8 @@
 //if PREVENT_DANGEROUS_EXTRUDE is on, you can still disable (uncomment) very long bits of extrusion separately.
 #define PREVENT_LENGTHY_EXTRUDE
 
-#define EXTRUDE_MINTEMP 175//设置挤出头运行的最低温度
+#define EXTRUDE_MINTEMP 175//设置挤出头运行的最低温度 
+                           // Setting the minimum temperature extrusion head running, may want ot change this too
 #define EXTRUDE_MAXLENGTH (X_MAX_LENGTH+Y_MAX_LENGTH) //避免非常长的挤出操作 //prevent extrusion of very large distances.
 
 
@@ -532,6 +533,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
   #define ACCURATE_BED_LEVELING
   #ifdef ACCURATE_BED_LEVELING
     #define ACCURATE_BED_LEVELING_POINTS 3 //自动调平探头点点数 3为横竖向各点3个点，共9点，改为6就是横竖向各点6个点，共36个点。
+                                           //Automatic leveling, vertical probe points to 3 points each by 3 points, a total of nine points to six points is horizontal, six points each, a total of 36 points.
     #define ACCURATE_BED_LEVELING_GRID_X ((RIGHT_PROBE_BED_POSITION - LEFT_PROBE_BED_POSITION) / (ACCURATE_BED_LEVELING_POINTS - 1))
     #define ACCURATE_BED_LEVELING_GRID_Y ((BACK_PROBE_BED_POSITION - FRONT_PROBE_BED_POSITION) / (ACCURATE_BED_LEVELING_POINTS - 1))
     #define NONLINEAR_BED_LEVELING
@@ -552,7 +554,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 // For deltabots this means top and center of the Cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 181.1 // no heat bed: 206.6 
+#define MANUAL_Z_HOME_POS 186.3 // no heat bed: 206.6 
                                 // real, no heat bed: 210.0//306.6 
                                 // Z轴高度设置 
                                 // was 230
