@@ -554,7 +554,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 // For deltabots this means top and center of the Cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 186.3 // no heat bed: 206.6 
+#define MANUAL_Z_HOME_POS 185.9 // no heat bed: 206.6 
                                 // real, no heat bed: 210.0//306.6 
                                 // Z轴高度设置 
                                 // was 230
