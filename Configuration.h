@@ -123,6 +123,27 @@
 // Horizontal distance bridged by diagonal push rods when effector is centered.
 #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
 
+#ifdef SMART_AUTO_CALIBRATION
+//Uncomment to enable autocalibration debug messages
+//#define DEBUG_MESSAGES
+
+// Precision for G30 delta autocalibration function
+#define AUTOCALIBRATION_PRECISION 0.03 // mm
+
+// Diameter of print bed - this is used to set the distance that autocalibration probes the bed at.
+#define BED_DIAMETER 170 // mm
+
+// Z-Probe variables
+// Start and end location values are used to deploy/retract the probe (will move from start to end and back again) 
+#define Z_PROBE_OFFSET {0, 10, -5.6, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe.
+#define Z_PROBE_DEPLOY_START_LOCATION {20, 96, 30, 0}   // X, Y, Z, E start location for z-probe deployment sequence
+#define Z_PROBE_DEPLOY_END_LOCATION {5, 96, 30, 0} 	  // X, Y, Z, E end location for z-probe deployment sequence
+#define Z_PROBE_RETRACT_START_LOCATION {49, 84, 20, 0}  // X, Y, Z, E start location for z-probe retract sequence
+#define Z_PROBE_RETRACT_END_LOCATION {49, 84, 1, 0}     // X, Y, Z, E end location for z-probe retract sequence 
+
+#define AUTOLEVEL_GRID 24 // Distance between autolevel Z probing points, should be less than print surface radius/3.
+
+#endif //SMART_AUTO_CALIBRATION
 // 打印半径
 // #define DELTA_PRINTABLE_RADIUS 90.0
 // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
@@ -137,8 +158,9 @@
 #define DELTA_TOWER2_Y -COS_60*DELTA_RADIUS
 #define DELTA_TOWER3_X 0.0
 #define DELTA_TOWER3_Y DELTA_RADIUS
-
-#define DELTA_DIAGONAL_ROD_2 pow(DELTA_DIAGONAL_ROD,2)
+#ifndef SMART_AUTO_CALIBRATION
+  #define DELTA_DIAGONAL_ROD_2 pow(DELTA_DIAGONAL_ROD,2)
+#endif
 
 //===========================================================================
 //========================MICROMAKE 3D打印机 传感器设置======================
@@ -554,7 +576,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 // For deltabots this means top and center of the Cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 185.9 // no heat bed: 206.6 
+#define MANUAL_Z_HOME_POS 187.6 // no heat bed: 206.6 
                                 // real, no heat bed: 210.0//306.6 
                                 // Z轴高度设置 
                                 // was 230
