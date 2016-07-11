@@ -481,7 +481,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 //    You must specify the X & Y coordinates of all 3 points
 
 
-  #define DELTA_PROBABLE_RADIUS (DELTA_PRINTABLE_RADIUS-50)//此处设置为调平探针移动范围，增大调平范围减少“-50”这个值，减少调平范围增大“-50”这个值
+  #define DELTA_PROBABLE_RADIUS (DELTA_PRINTABLE_RADIUS-40)//此处设置为调平探针移动范围，增大调平范围减少“-50”这个值，减少调平范围增大“-50”这个值
                                                            //// Here to leveling the moving range of the probe, increasing the range of leveling down "-50" this value is increased to reduce the leveling range "-50" value
   //如：#define DELTA_PROBABLE_RADIUS (DELTA_PRINTABLE_RADIUS-60)
   
@@ -498,7 +498,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
   */
   #define X_PROBE_OFFSET_FROM_EXTRUDER 0.0
   #define Y_PROBE_OFFSET_FROM_EXTRUDER 0.0
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER 1.6//自动调平设置 过高减小 过低增大
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER 0.6 //自动调平设置 过高减小 过低增大
                                           //translation: Automatic leveling set too high too low to reduce the increase
 
   #define Z_RAISE_BEFORE_HOMING 4       // 配置回原点前Z轴升起的高度，该高度要确保在Z轴最大高度范围内。 
@@ -532,7 +532,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 
   #define ACCURATE_BED_LEVELING
   #ifdef ACCURATE_BED_LEVELING
-    #define ACCURATE_BED_LEVELING_POINTS 3 //自动调平探头点点数 3为横竖向各点3个点，共9点，改为6就是横竖向各点6个点，共36个点。
+    #define ACCURATE_BED_LEVELING_POINTS 5 //自动调平探头点点数 3为横竖向各点3个点，共9点，改为6就是横竖向各点6个点，共36个点。
                                            //Automatic leveling, vertical probe points to 3 points each by 3 points, a total of nine points to six points is horizontal, six points each, a total of 36 points.
     #define ACCURATE_BED_LEVELING_GRID_X ((RIGHT_PROBE_BED_POSITION - LEFT_PROBE_BED_POSITION) / (ACCURATE_BED_LEVELING_POINTS - 1))
     #define ACCURATE_BED_LEVELING_GRID_Y ((BACK_PROBE_BED_POSITION - FRONT_PROBE_BED_POSITION) / (ACCURATE_BED_LEVELING_POINTS - 1))
@@ -855,6 +855,11 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 //
 //#define SERVO_ENDSTOPS {-1, -1, 0} // Servo index for X, Y, Z. Disable with -1
 //#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 70,0} // X,Y,Z Axis Extend and Retract angles
+
+// VD: added to enable servo stops
+#define NUM_SERVOS 1
+#define Z_ENDSTOP_SERVO_NR 0
+#define SERVO_ENDSTOP_ANGLES {{0,0}, {0,0}, {70,0}}
 
 #include "Configuration_adv.h"
 #include "thermistortables.h"
