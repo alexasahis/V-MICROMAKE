@@ -381,7 +381,7 @@ your extruder heater takes 2 minutes to hit the target on heating.
   #define ENDSTOPPULLUP_ZMAX
   #define ENDSTOPPULLUP_XMIN
   #define ENDSTOPPULLUP_YMIN
-  #define ENDSTOPPULLUP_ZMIN
+  //#define ENDSTOPPULLUP_ZMIN
 #endif
 
 // The pullups are needed if you directly connect a mechanical endswitch between the signal and ground pins.
@@ -395,7 +395,7 @@ your extruder heater takes 2 minutes to hit the target on heating.
 
 const bool X_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
 const bool Y_MIN_ENDSTOP_INVERTING = false; 
-const bool Z_MIN_ENDSTOP_INVERTING = false;
+const bool Z_MIN_ENDSTOP_INVERTING = true;
 const bool X_MAX_ENDSTOP_INVERTING = false; 
 const bool Y_MAX_ENDSTOP_INVERTING = false;
 const bool Z_MAX_ENDSTOP_INVERTING = false; 
@@ -496,9 +496,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
   #define Y_PROBE_OFFSET_FROM_EXTRUDER -6.304
   #define Z_PROBE_OFFSET_FROM_EXTRUDER -17.25  // Increase this if the first layer is too thin.
   */
-  #define X_PROBE_OFFSET_FROM_EXTRUDER 0.0
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER 0.0
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER 0.6 //自动调平设置 过高减小 过低增大
+  #define X_PROBE_OFFSET_FROM_EXTRUDER 24.0
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER -16.98
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.5 //自动调平设置 过高减小 过低增大
                                           //translation: Automatic leveling set too high too low to reduce the increase
 
   #define Z_RAISE_BEFORE_HOMING 4       // 配置回原点前Z轴升起的高度，该高度要确保在Z轴最大高度范围内。 
@@ -525,7 +525,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
   #ifdef Z_SAFE_HOMING
 
     #define Z_SAFE_HOMING_X_POINT (X_MAX_LENGTH/2)   // X point for Z homing when homing all axis (G28)
-    #define Z_SAFE_HOMING_Y_POINT (Y_MAX_LENGTH/2)   // Y point for Z homing when homing all axis (G28)
+    #define Z_SAFE_HOMING_Y_POINT (Y_MAX_LENGTH/2)   //  Y point for Z homing when homing all axis (G28)
 
   #endif
 
@@ -857,9 +857,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 //#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 70,0} // X,Y,Z Axis Extend and Retract angles
 
 // VD: added to enable servo stops
-#define NUM_SERVOS 1
-#define Z_ENDSTOP_SERVO_NR 0
-#define SERVO_ENDSTOP_ANGLES {{0,0}, {0,0}, {70,0}}
+//#define NUM_SERVOS 1
+//#define Z_ENDSTOP_SERVO_NR 0
+//#define SERVO_ENDSTOP_ANGLES {{0,0}, {0,0}, {70,0}}
 
 #include "Configuration_adv.h"
 #include "thermistortables.h"
