@@ -107,7 +107,7 @@
 // 打印头到滑杆水平距离 凹凸调整此参数
 // Horizontal offset from middle of printer to smooth rod center.
 //#define DELTA_SMOOTH_ROD_OFFSET 160// mm
-#define DELTA_SMOOTH_ROD_OFFSET 155.80// mm
+#define DELTA_SMOOTH_ROD_OFFSET 158.0// mm
 
 // 效应器球中心和打印头的水平距离
 //#define DELTA_EFFECTOR_OFFSET 24.0 // mm
@@ -496,7 +496,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
   #define Y_PROBE_OFFSET_FROM_EXTRUDER -6.304
   #define Z_PROBE_OFFSET_FROM_EXTRUDER -17.25  // Increase this if the first layer is too thin.
   */
-  #define X_PROBE_OFFSET_FROM_EXTRUDER 28.0
+  #define X_PROBE_OFFSET_FROM_EXTRUDER 24.0
   #define Y_PROBE_OFFSET_FROM_EXTRUDER -15.4
   #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.95 //自动调平设置 过高减小 过低增大
                                           //translation: Automatic leveling set too high too low to reduce the increase
