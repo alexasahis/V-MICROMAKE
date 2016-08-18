@@ -112,7 +112,7 @@
 // 效应器球中心和打印头的水平距离
 //#define DELTA_EFFECTOR_OFFSET 24.0 // mm
 // Horizontal offset of the universal joints on the end effector.
-#define DELTA_EFFECTOR_OFFSET 23.0 // mm was 24
+#define DELTA_EFFECTOR_OFFSET 20.2 // mm was 24
 
 // 滑车球中心到滑杆水平距离
 // Horizontal offset of the universal joints on the carriages.
@@ -496,9 +496,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
   #define Y_PROBE_OFFSET_FROM_EXTRUDER -6.304
   #define Z_PROBE_OFFSET_FROM_EXTRUDER -17.25  // Increase this if the first layer is too thin.
   */
-  #define X_PROBE_OFFSET_FROM_EXTRUDER 24.0
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER -16.98
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.5 //自动调平设置 过高减小 过低增大
+  #define X_PROBE_OFFSET_FROM_EXTRUDER 28.0
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER -15.4
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.95 //自动调平设置 过高减小 过低增大
                                           //translation: Automatic leveling set too high too low to reduce the increase
 
   #define Z_RAISE_BEFORE_HOMING 4       // 配置回原点前Z轴升起的高度，该高度要确保在Z轴最大高度范围内。 
@@ -510,7 +510,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 
   #define Z_RAISE_BEFORE_PROBING 80  ////经过第一个检测点前Z轴抬起的高度，该高度要确保调平传感器可以正常放下。
                                      //How much the extruder will be raised before traveling to the first probing point.
-  #define Z_RAISE_BETWEEN_PROBINGS 5  //经过下一个检测点前Z轴抬起的高度
+  #define Z_RAISE_BETWEEN_PROBINGS 20  //经过下一个检测点前Z轴抬起的高度
                                       //How much the extruder will be raised when traveling from between next probing points
 
 //If you have enabled the Bed Auto Leveling and are using the same Z Probe for Z Homing,
@@ -532,7 +532,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 
   #define ACCURATE_BED_LEVELING
   #ifdef ACCURATE_BED_LEVELING
-    #define ACCURATE_BED_LEVELING_POINTS 5 //自动调平探头点点数 3为横竖向各点3个点，共9点，改为6就是横竖向各点6个点，共36个点。
+    #define ACCURATE_BED_LEVELING_POINTS 2 //自动调平探头点点数 3为横竖向各点3个点，共9点，改为6就是横竖向各点6个点，共36个点。
                                            //Automatic leveling, vertical probe points to 3 points each by 3 points, a total of nine points to six points is horizontal, six points each, a total of 36 points.
     #define ACCURATE_BED_LEVELING_GRID_X ((RIGHT_PROBE_BED_POSITION - LEFT_PROBE_BED_POSITION) / (ACCURATE_BED_LEVELING_POINTS - 1))
     #define ACCURATE_BED_LEVELING_GRID_Y ((BACK_PROBE_BED_POSITION - FRONT_PROBE_BED_POSITION) / (ACCURATE_BED_LEVELING_POINTS - 1))
